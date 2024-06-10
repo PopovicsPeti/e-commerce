@@ -1,0 +1,122 @@
+{
+  "C:\\Users\\scare\\OneDrive\\Asztali gép\\EPAM Angular Project\\cloud\\first-task": {
+    "versionSfCore": null,
+    "versionFramework": "4.0.38",
+    "isWithinCompose": false,
+    "composeOrgName": null,
+    "servicePath": "C:\\Users\\scare\\OneDrive\\Asztali gép\\EPAM Angular Project\\cloud\\first-task",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "my-angular-app",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs14.x",
+        "region": "us-east-1",
+        "stage": "dev",
+        "versionFunctions": true
+      },
+      "plugins": [
+        "serverless-finch",
+        "serverless-cloudfront-invalidate",
+        "serverless-scriptable-plugin"
+      ],
+      "custom": {
+        "client": {
+          "bucketName": "e-commerce01",
+          "distributionFolder": "dist/app/browser",
+          "indexDocument": "index.html",
+          "errorDocument": "index.html"
+        },
+        "cloudfrontInvalidate": {
+          "distributionId": "E21ZVQWBQYPKC6",
+          "items": ["/*"]
+        }
+      },
+      "functions": {
+        "invalidateCache": {
+          "handler": "handler.invalidateCache",
+          "events": [],
+          "name": "my-angular-app-dev-invalidateCache"
+        }
+      },
+      "resources": {
+        "Resources": {
+          "MyDistribution": {
+            "Type": "AWS::CloudFront::Distribution",
+            "Properties": {
+              "DistributionConfig": {
+                "Enabled": true,
+                "Origins": [
+                  {
+                    "DomainName": "e-commerce01.s3.amazonaws.com",
+                    "Id": "myS3Origin",
+                    "S3OriginConfig": {
+                      "OriginAccessIdentity": ""
+                    }
+                  }
+                ],
+                "DefaultCacheBehavior": {
+                  "TargetOriginId": "myS3Origin",
+                  "ViewerProtocolPolicy": "redirect-to-https",
+                  "ForwardedValues": {
+                    "QueryString": false,
+                    "Cookies": {
+                      "Forward": "none"
+                    }
+                  }
+                },
+                "PriceClass": "PriceClass_100",
+                "ViewerCertificate": {
+                  "CloudFrontDefaultCertificate": true
+                }
+              }
+            }
+          }
+        }
+      },
+      "scriptHooks": {
+        "before:deploy:deploy": "sls cloudfrontInvalidate"
+      },
+      "package": {
+        "exclude": ["node_modules/**", ".serverless/**", ".webpack/**"],
+        "artifactsS3KeyDirname": "serverless/my-angular-app/dev/code-artifacts"
+      }
+    },
+    "serviceRawFile": "service: my-angular-app\n\nprovider:\n  name: aws\n  runtime: nodejs14.x\n  region: us-east-1\n\nplugins:\n  - serverless-finch\n  - serverless-cloudfront-invalidate\n  - serverless-scriptable-plugin\n\ncustom:\n  client:\n    bucketName: e-commerce01\n    distributionFolder: dist/app/browser\n    indexDocument: index.html\n    errorDocument: index.html\n  cloudfrontInvalidate:\n    distributionId: E21ZVQWBQYPKC6\n    items:\n      - '/*'\n\nfunctions:\n  invalidateCache:\n    handler: handler.invalidateCache\n\nresources:\n  Resources:\n    MyDistribution:\n      Type: 'AWS::CloudFront::Distribution'\n      Properties:\n        DistributionConfig:\n          Enabled: true\n          Origins:\n            - DomainName: e-commerce01.s3.amazonaws.com\n              Id: myS3Origin\n              S3OriginConfig:\n                OriginAccessIdentity: ''\n          DefaultCacheBehavior:\n            TargetOriginId: myS3Origin\n            ViewerProtocolPolicy: redirect-to-https\n            ForwardedValues:\n              QueryString: false\n              Cookies:\n                Forward: none\n          PriceClass: PriceClass_100\n          ViewerCertificate:\n            CloudFrontDefaultCertificate: true\n\nscriptHooks:\n  before:deploy:deploy: 'sls cloudfrontInvalidate'\n\npackage:\n  exclude:\n    - node_modules/**\n    - .serverless/**\n    - .webpack/**\n",
+    "command": ["client", "deploy"],
+    "options": {},
+    "error": null,
+    "accessKeyV2": "<REDACTED>",
+    "accessKeyV1": "<REDACTED>",
+    "orgId": "087f2c60-ea9d-4504-89e2-7947bb3dbac6",
+    "orgName": "popovicspeti",
+    "userId": "DQrXZR2CYCctPYhn7f",
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "userName": "popovicspeti",
+    "subscription": null,
+    "userEmail": "p.popovics92@gmail.com",
+    "serviceProviderAwsCredentials": "<REDACTED>",
+    "serviceProviderAwsAccountId": "992382401885",
+    "versionSf": "4.0.38",
+    "serviceProviderAwsCfStackName": "my-angular-app-dev",
+    "serviceProviderAwsCfStackId": "arn:aws:cloudformation:us-east-1:992382401885:stack/my-service-dev/cde03c50-2662-11ef-af74-0ec8cd790345",
+    "serviceProviderAwsCfStackCreated": "2024-06-09T13:18:47.548Z",
+    "serviceProviderAwsCfStackUpdated": "2024-06-09T13:19:40.019Z",
+    "serviceProviderAwsCfStackStatus": "UPDATE_COMPLETE",
+    "serviceProviderAwsCfStackOutputs": [
+      {
+        "OutputKey": "ServerlessDeploymentBucketName",
+        "OutputValue": "my-service-dev-serverlessdeploymentbucket-4reia9w9lbpr",
+        "ExportName": "sls-my-service-dev-ServerlessDeploymentBucketName"
+      }
+    ]
+  }
+}

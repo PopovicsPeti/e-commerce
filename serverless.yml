@@ -1,0 +1,83 @@
+service: my-angular-app
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  region: us-east-1
+
+plugins:
+  - serverless-finch
+  - serverless-cloudfront-invalidate
+
+custom:
+  client:
+    bucketName: e-commerce01
+    distributionFolder: dist/app/browser
+    indexDocument: index.html
+    errorDocument: index.html
+  cloudfrontInvalidate:
+    distributionId: E21ZVQWBQYPKC6
+    items:
+      - "/*"
+
+resources:
+  Resources:
+    S3Bucket:
+      Type: AWS::S3::Bucket
+      Properties:
+        BucketName: e-commerce01
+        AccessControl: Private
+
+    BucketPolicy:
+      Type: AWS::S3::BucketPolicy
+      Properties:
+        Bucket: e-commerce01
+        PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+            - Effect: Allow
+              Principal:
+                CanonicalUser:
+                  {
+                    "Fn::GetAtt":
+                      ["CloudFrontOriginAccessIdentity", "S3CanonicalUserId"],
+                  }
+              Action: "s3:GetObject"
+              Resource: "arn:aws:s3:::e-commerce01/*"
+
+    CloudFrontOriginAccessIdentity:
+      Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
+      Properties:
+        CloudFrontOriginAccessIdentityConfig:
+          Comment: Access identity for my-angular-app CloudFront
+
+    MyDistribution:
+      Type: "AWS::CloudFront::Distribution"
+      Properties:
+        DistributionConfig:
+          Enabled: true
+          Origins:
+            - DomainName: e-commerce01.s3.amazonaws.com
+              Id: myS3Origin
+              S3OriginConfig:
+                OriginAccessIdentity:
+                  "Fn::Join":
+                    - ""
+                    - - "origin-access-identity/cloudfront/"
+                      - Ref: CloudFrontOriginAccessIdentity
+          DefaultCacheBehavior:
+            TargetOriginId: myS3Origin
+            ViewerProtocolPolicy: redirect-to-https
+            ForwardedValues:
+              QueryString: false
+              Cookies:
+                Forward: none
+          PriceClass: PriceClass_100
+          ViewerCertificate:
+            CloudFrontDefaultCertificate: true
+
+package:
+  exclude:
+    - node_modules/**
+    - .serverless/**
+    - .webpack/**
