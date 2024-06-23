@@ -52,8 +52,6 @@ Most likely you are getting a message
 
 To fix it you either need to follow conventional commit messages rules, or remove `.husky/pre-commit` file which enables the aforementioned rule.
 
-cloudfront: https://dp4c99edyvlq8.cloudfront.net/
-s3 bucket: https://e-commerce01.s3.eu-north-1.amazonaws.com/index.html
-
-
+cloudfront: https://d2qye24dxd020z.cloudfront.net/
+s3 bucket: https://e-commerce-02.s3.eu-north-1.amazonaws.com/index.html
 
