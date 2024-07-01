@@ -1,4 +1,6 @@
-import { DOCUMENT } from "./chunk-HP6DT5TB.js";
+import {
+  DOCUMENT
+} from "./chunk-HP6DT5TB.js";
 import {
   ANIMATION_MODULE_TYPE,
   Inject,
@@ -9,30 +11,25 @@ import {
   inject,
   setClassMetadata,
   ɵɵdefineInjectable,
-  ɵɵinject,
+  ɵɵinject
 } from "./chunk-BAODPQS2.js";
 
 // node_modules/@angular/animations/fesm2022/animations.mjs
 var AnimationMetadataType;
-(function (AnimationMetadataType2) {
-  AnimationMetadataType2[(AnimationMetadataType2["State"] = 0)] = "State";
-  AnimationMetadataType2[(AnimationMetadataType2["Transition"] = 1)] =
-    "Transition";
-  AnimationMetadataType2[(AnimationMetadataType2["Sequence"] = 2)] = "Sequence";
-  AnimationMetadataType2[(AnimationMetadataType2["Group"] = 3)] = "Group";
-  AnimationMetadataType2[(AnimationMetadataType2["Animate"] = 4)] = "Animate";
-  AnimationMetadataType2[(AnimationMetadataType2["Keyframes"] = 5)] =
-    "Keyframes";
-  AnimationMetadataType2[(AnimationMetadataType2["Style"] = 6)] = "Style";
-  AnimationMetadataType2[(AnimationMetadataType2["Trigger"] = 7)] = "Trigger";
-  AnimationMetadataType2[(AnimationMetadataType2["Reference"] = 8)] =
-    "Reference";
-  AnimationMetadataType2[(AnimationMetadataType2["AnimateChild"] = 9)] =
-    "AnimateChild";
-  AnimationMetadataType2[(AnimationMetadataType2["AnimateRef"] = 10)] =
-    "AnimateRef";
-  AnimationMetadataType2[(AnimationMetadataType2["Query"] = 11)] = "Query";
-  AnimationMetadataType2[(AnimationMetadataType2["Stagger"] = 12)] = "Stagger";
+(function(AnimationMetadataType2) {
+  AnimationMetadataType2[AnimationMetadataType2["State"] = 0] = "State";
+  AnimationMetadataType2[AnimationMetadataType2["Transition"] = 1] = "Transition";
+  AnimationMetadataType2[AnimationMetadataType2["Sequence"] = 2] = "Sequence";
+  AnimationMetadataType2[AnimationMetadataType2["Group"] = 3] = "Group";
+  AnimationMetadataType2[AnimationMetadataType2["Animate"] = 4] = "Animate";
+  AnimationMetadataType2[AnimationMetadataType2["Keyframes"] = 5] = "Keyframes";
+  AnimationMetadataType2[AnimationMetadataType2["Style"] = 6] = "Style";
+  AnimationMetadataType2[AnimationMetadataType2["Trigger"] = 7] = "Trigger";
+  AnimationMetadataType2[AnimationMetadataType2["Reference"] = 8] = "Reference";
+  AnimationMetadataType2[AnimationMetadataType2["AnimateChild"] = 9] = "AnimateChild";
+  AnimationMetadataType2[AnimationMetadataType2["AnimateRef"] = 10] = "AnimateRef";
+  AnimationMetadataType2[AnimationMetadataType2["Query"] = 11] = "Query";
+  AnimationMetadataType2[AnimationMetadataType2["Stagger"] = 12] = "Stagger";
 })(AnimationMetadataType || (AnimationMetadataType = {}));
 var AUTO_STYLE = "*";
 function trigger(name, definitions) {
@@ -40,35 +37,35 @@ function trigger(name, definitions) {
     type: AnimationMetadataType.Trigger,
     name,
     definitions,
-    options: {},
+    options: {}
   };
 }
 function animate(timings, styles = null) {
   return {
     type: AnimationMetadataType.Animate,
     styles,
-    timings,
+    timings
   };
 }
 function group(steps, options = null) {
   return {
     type: AnimationMetadataType.Group,
     steps,
-    options,
+    options
   };
 }
 function sequence(steps, options = null) {
   return {
     type: AnimationMetadataType.Sequence,
     steps,
-    options,
+    options
   };
 }
 function style(tokens) {
   return {
     type: AnimationMetadataType.Style,
     styles: tokens,
-    offset: null,
+    offset: null
   };
 }
 function state(name, styles, options) {
@@ -76,7 +73,7 @@ function state(name, styles, options) {
     type: AnimationMetadataType.State,
     name,
     styles,
-    options,
+    options
   };
 }
 function transition(stateChangeExpr, steps, options = null) {
@@ -84,13 +81,13 @@ function transition(stateChangeExpr, steps, options = null) {
     type: AnimationMetadataType.Transition,
     expr: stateChangeExpr,
     animation: steps,
-    options,
+    options
   };
 }
 function animateChild(options = null) {
   return {
     type: AnimationMetadataType.AnimateChild,
-    options,
+    options
   };
 }
 function query(selector, animation, options = null) {
@@ -98,44 +95,36 @@ function query(selector, animation, options = null) {
     type: AnimationMetadataType.Query,
     selector,
     animation,
-    options,
+    options
   };
 }
-var _AnimationBuilder = class _AnimationBuilder {};
+var _AnimationBuilder = class _AnimationBuilder {
+};
 _AnimationBuilder.ɵfac = function AnimationBuilder_Factory(t) {
   return new (t || _AnimationBuilder)();
 };
 _AnimationBuilder.ɵprov = ɵɵdefineInjectable({
   token: _AnimationBuilder,
   factory: () => (() => inject(BrowserAnimationBuilder))(),
-  providedIn: "root",
+  providedIn: "root"
 });
 var AnimationBuilder = _AnimationBuilder;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      AnimationBuilder,
-      [
-        {
-          type: Injectable,
-          args: [
-            {
-              providedIn: "root",
-              useFactory: () => inject(BrowserAnimationBuilder),
-            },
-          ],
-        },
-      ],
-      null,
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(AnimationBuilder, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root",
+      useFactory: () => inject(BrowserAnimationBuilder)
+    }]
+  }], null, null);
 })();
-var AnimationFactory = class {};
+var AnimationFactory = class {
+};
 var _BrowserAnimationBuilder = class _BrowserAnimationBuilder extends AnimationBuilder {
   constructor(rootRenderer, doc) {
     super();
     this.animationModuleType = inject(ANIMATION_MODULE_TYPE, {
-      optional: true,
+      optional: true
     });
     this._nextAnimationId = 0;
     const typeData = {
@@ -143,19 +132,12 @@ var _BrowserAnimationBuilder = class _BrowserAnimationBuilder extends AnimationB
       encapsulation: ViewEncapsulation$1.None,
       styles: [],
       data: {
-        animation: [],
-      },
+        animation: []
+      }
     };
     this._renderer = rootRenderer.createRenderer(doc.body, typeData);
-    if (
-      this.animationModuleType === null &&
-      !isAnimationRenderer(this._renderer)
-    ) {
-      throw new RuntimeError(
-        3600,
-        (typeof ngDevMode === "undefined" || ngDevMode) &&
-          "Angular detected that the `AnimationBuilder` was injected, but animation support was not enabled. Please make sure that you enable animations in your application by calling `provideAnimations()` or `provideAnimationsAsync()` function.",
-      );
+    if (this.animationModuleType === null && !isAnimationRenderer(this._renderer)) {
+      throw new RuntimeError(3600, (typeof ngDevMode === "undefined" || ngDevMode) && "Angular detected that the `AnimationBuilder` was injected, but animation support was not enabled. Please make sure that you enable animations in your application by calling `provideAnimations()` or `provideAnimationsAsync()` function.");
     }
   }
   build(animation) {
@@ -167,47 +149,29 @@ var _BrowserAnimationBuilder = class _BrowserAnimationBuilder extends AnimationB
   }
 };
 _BrowserAnimationBuilder.ɵfac = function BrowserAnimationBuilder_Factory(t) {
-  return new (t || _BrowserAnimationBuilder)(
-    ɵɵinject(RendererFactory2),
-    ɵɵinject(DOCUMENT),
-  );
+  return new (t || _BrowserAnimationBuilder)(ɵɵinject(RendererFactory2), ɵɵinject(DOCUMENT));
 };
 _BrowserAnimationBuilder.ɵprov = ɵɵdefineInjectable({
   token: _BrowserAnimationBuilder,
   factory: _BrowserAnimationBuilder.ɵfac,
-  providedIn: "root",
+  providedIn: "root"
 });
 var BrowserAnimationBuilder = _BrowserAnimationBuilder;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      BrowserAnimationBuilder,
-      [
-        {
-          type: Injectable,
-          args: [
-            {
-              providedIn: "root",
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: RendererFactory2,
-        },
-        {
-          type: Document,
-          decorators: [
-            {
-              type: Inject,
-              args: [DOCUMENT],
-            },
-          ],
-        },
-      ],
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(BrowserAnimationBuilder, [{
+    type: Injectable,
+    args: [{
+      providedIn: "root"
+    }]
+  }], () => [{
+    type: RendererFactory2
+  }, {
+    type: Document,
+    decorators: [{
+      type: Inject,
+      args: [DOCUMENT]
+    }]
+  }], null);
 })();
 var BrowserAnimationFactory = class extends AnimationFactory {
   constructor(_id, _renderer) {
@@ -216,12 +180,7 @@ var BrowserAnimationFactory = class extends AnimationFactory {
     this._renderer = _renderer;
   }
   create(element, options) {
-    return new RendererAnimationPlayer(
-      this._id,
-      element,
-      options || {},
-      this._renderer,
-    );
+    return new RendererAnimationPlayer(this._id, element, options || {}, this._renderer);
   }
 };
 var RendererAnimationPlayer = class {
@@ -235,11 +194,7 @@ var RendererAnimationPlayer = class {
     this._command("create", options);
   }
   _listen(eventName, callback) {
-    return this._renderer.listen(
-      this.element,
-      `@@${this.id}:${eventName}`,
-      callback,
-    );
+    return this._renderer.listen(this.element, `@@${this.id}:${eventName}`, callback);
   }
   _command(command, ...args) {
     issueAnimationCommand(this._renderer, this.element, this.id, command, args);
@@ -283,11 +238,7 @@ var RendererAnimationPlayer = class {
     this._command("setPosition", p);
   }
   getPosition() {
-    return (
-      unwrapAnimationRenderer(this._renderer)?.engine?.players[
-        this.id
-      ]?.getPosition() ?? 0
-    );
+    return unwrapAnimationRenderer(this._renderer)?.engine?.players[this.id]?.getPosition() ?? 0;
   }
 };
 function issueAnimationCommand(renderer, element, id, command, args) {
@@ -341,7 +292,8 @@ var NoopAnimationPlayer = class {
   hasStarted() {
     return this._started;
   }
-  init() {}
+  init() {
+  }
   play() {
     if (!this.hasStarted()) {
       this._onStart();
@@ -357,8 +309,10 @@ var NoopAnimationPlayer = class {
     this._onStartFns.forEach((fn) => fn());
     this._onStartFns = [];
   }
-  pause() {}
-  restart() {}
+  pause() {
+  }
+  restart() {
+  }
   finish() {
     this._onFinish();
   }
@@ -428,10 +382,7 @@ var AnimationGroupPlayer = class {
         });
       });
     }
-    this.totalTime = this.players.reduce(
-      (time, player) => Math.max(time, player.totalTime),
-      0,
-    );
+    this.totalTime = this.players.reduce((time, player) => Math.max(time, player.totalTime), 0);
   }
   _onFinish() {
     if (!this._finished) {
@@ -500,16 +451,13 @@ var AnimationGroupPlayer = class {
   setPosition(p) {
     const timeAtPosition = p * this.totalTime;
     this.players.forEach((player) => {
-      const position = player.totalTime
-        ? Math.min(1, timeAtPosition / player.totalTime)
-        : 1;
+      const position = player.totalTime ? Math.min(1, timeAtPosition / player.totalTime) : 1;
       player.setPosition(position);
     });
   }
   getPosition() {
     const longestPlayer = this.players.reduce((longestSoFar, player) => {
-      const newPlayerIsLongest =
-        longestSoFar === null || player.totalTime > longestSoFar.totalTime;
+      const newPlayerIsLongest = longestSoFar === null || player.totalTime > longestSoFar.totalTime;
       return newPlayerIsLongest ? player : longestSoFar;
     }, null);
     return longestPlayer != null ? longestPlayer.getPosition() : 0;
@@ -544,7 +492,7 @@ export {
   query,
   NoopAnimationPlayer,
   AnimationGroupPlayer,
-  ɵPRE_STYLE,
+  ɵPRE_STYLE
 };
 /*! Bundled license information:
 

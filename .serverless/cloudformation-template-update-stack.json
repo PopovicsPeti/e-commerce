@@ -2,83 +2,85 @@
   "AWSTemplateFormatVersion": "2010-09-09",
   "Description": "The AWS CloudFormation template for this Serverless application",
   "Resources": {
-    "ServerlessDeploymentBucket": {
+    "S3Bucket": {
       "Type": "AWS::S3::Bucket",
       "Properties": {
-        "BucketEncryption": {
-          "ServerSideEncryptionConfiguration": [
+        "BucketName": "e-commerce-03",
+        "AccessControl": "Private"
+      }
+    },
+    "BucketPolicy": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": "e-commerce-03",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
             {
-              "ServerSideEncryptionByDefault": {
-                "SSEAlgorithm": "AES256"
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::Sub": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E3AKD80G2NZMT4"
+                }
+              },
+              "Action": "s3:GetObject",
+              "Resource": {
+                "Fn::Sub": "arn:aws:s3:::e-commerce-03/*"
               }
             }
           ]
         }
       }
     },
-    "ServerlessDeploymentBucketPolicy": {
-      "Type": "AWS::S3::BucketPolicy",
+    "CloudFrontOriginAccessIdentity": {
+      "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
       "Properties": {
-        "Bucket": {
-          "Ref": "ServerlessDeploymentBucket"
-        },
-        "PolicyDocument": {
-          "Statement": [
+        "CloudFrontOriginAccessIdentityConfig": {
+          "Comment": "Access identity for my-angular-app CloudFront"
+        }
+      }
+    },
+    "MyDistribution": {
+      "Type": "AWS::CloudFront::Distribution",
+      "Properties": {
+        "DistributionConfig": {
+          "Enabled": true,
+          "Origins": [
             {
-              "Action": "s3:*",
-              "Effect": "Deny",
-              "Principal": "*",
-              "Resource": [
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:",
-                      {
-                        "Ref": "AWS::Partition"
-                      },
-                      ":s3:::",
-                      {
-                        "Ref": "ServerlessDeploymentBucket"
-                      },
-                      "/*"
-                    ]
-                  ]
-                },
-                {
-                  "Fn::Join": [
-                    "",
-                    [
-                      "arn:",
-                      {
-                        "Ref": "AWS::Partition"
-                      },
-                      ":s3:::",
-                      {
-                        "Ref": "ServerlessDeploymentBucket"
-                      }
-                    ]
-                  ]
-                }
-              ],
-              "Condition": {
-                "Bool": {
-                  "aws:SecureTransport": false
+              "DomainName": {
+                "Fn::Sub": "e-commerce-03.s3.amazonaws.com"
+              },
+              "Id": "myS3Origin",
+              "S3OriginConfig": {
+                "OriginAccessIdentity": {
+                  "Fn::Sub": "origin-access-identity/cloudfront/E3AKD80G2NZMT4"
                 }
               }
             }
-          ]
+          ],
+          "DefaultCacheBehavior": {
+            "TargetOriginId": "myS3Origin",
+            "ViewerProtocolPolicy": "redirect-to-https",
+            "ForwardedValues": {
+              "QueryString": false,
+              "Cookies": {
+                "Forward": "none"
+              }
+            }
+          },
+          "PriceClass": "PriceClass_100",
+          "ViewerCertificate": {
+            "CloudFrontDefaultCertificate": true
+          }
         }
       }
     }
   },
   "Outputs": {
     "ServerlessDeploymentBucketName": {
-      "Value": {
-        "Ref": "ServerlessDeploymentBucket"
-      },
+      "Value": "new-deployment-bucket-2446",
       "Export": {
-        "Name": "sls-my-service-dev-ServerlessDeploymentBucketName"
+        "Name": "sls-my-angular-app-dev-ServerlessDeploymentBucketName"
       }
     }
   }

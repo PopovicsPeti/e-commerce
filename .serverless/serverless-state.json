@@ -1,206 +1,230 @@
 {
   "service": {
-    "service": "my-service",
+    "service": "my-angular-app",
     "serviceObject": {
-      "name": "my-service"
+      "name": "my-angular-app"
     },
     "provider": {
       "name": "aws",
+      "runtime": "nodejs20.x",
+      "region": "eu-north-1",
+      "deploymentBucket": "new-deployment-bucket-2446",
       "stage": "dev",
-      "region": "us-east-1",
       "versionFunctions": true,
+      "deploymentBucketObject": {
+        "name": "new-deployment-bucket-2446"
+      },
       "compiledCloudFormationTemplate": {
         "AWSTemplateFormatVersion": "2010-09-09",
         "Description": "The AWS CloudFormation template for this Serverless application",
         "Resources": {
-          "ServerlessDeploymentBucket": {
+          "S3Bucket": {
             "Type": "AWS::S3::Bucket",
             "Properties": {
-              "BucketEncryption": {
-                "ServerSideEncryptionConfiguration": [
+              "BucketName": "e-commerce-03",
+              "AccessControl": "Private"
+            }
+          },
+          "BucketPolicy": {
+            "Type": "AWS::S3::BucketPolicy",
+            "Properties": {
+              "Bucket": "e-commerce-03",
+              "PolicyDocument": {
+                "Version": "2012-10-17",
+                "Statement": [
                   {
-                    "ServerSideEncryptionByDefault": {
-                      "SSEAlgorithm": "AES256"
+                    "Effect": "Allow",
+                    "Principal": {
+                      "AWS": {
+                        "Fn::Sub": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E3AKD80G2NZMT4"
+                      }
+                    },
+                    "Action": "s3:GetObject",
+                    "Resource": {
+                      "Fn::Sub": "arn:aws:s3:::e-commerce-03/*"
                     }
                   }
                 ]
               }
             }
           },
-          "ServerlessDeploymentBucketPolicy": {
-            "Type": "AWS::S3::BucketPolicy",
+          "CloudFrontOriginAccessIdentity": {
+            "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
             "Properties": {
-              "Bucket": {
-                "Ref": "ServerlessDeploymentBucket"
-              },
-              "PolicyDocument": {
-                "Statement": [
+              "CloudFrontOriginAccessIdentityConfig": {
+                "Comment": "Access identity for my-angular-app CloudFront"
+              }
+            }
+          },
+          "MyDistribution": {
+            "Type": "AWS::CloudFront::Distribution",
+            "Properties": {
+              "DistributionConfig": {
+                "Enabled": true,
+                "Origins": [
                   {
-                    "Action": "s3:*",
-                    "Effect": "Deny",
-                    "Principal": "*",
-                    "Resource": [
-                      {
-                        "Fn::Join": [
-                          "",
-                          [
-                            "arn:",
-                            {
-                              "Ref": "AWS::Partition"
-                            },
-                            ":s3:::",
-                            {
-                              "Ref": "ServerlessDeploymentBucket"
-                            },
-                            "/*"
-                          ]
-                        ]
-                      },
-                      {
-                        "Fn::Join": [
-                          "",
-                          [
-                            "arn:",
-                            {
-                              "Ref": "AWS::Partition"
-                            },
-                            ":s3:::",
-                            {
-                              "Ref": "ServerlessDeploymentBucket"
-                            }
-                          ]
-                        ]
-                      }
-                    ],
-                    "Condition": {
-                      "Bool": {
-                        "aws:SecureTransport": false
+                    "DomainName": {
+                      "Fn::Sub": "e-commerce-03.s3.amazonaws.com"
+                    },
+                    "Id": "myS3Origin",
+                    "S3OriginConfig": {
+                      "OriginAccessIdentity": {
+                        "Fn::Sub": "origin-access-identity/cloudfront/E3AKD80G2NZMT4"
                       }
                     }
                   }
-                ]
+                ],
+                "DefaultCacheBehavior": {
+                  "TargetOriginId": "myS3Origin",
+                  "ViewerProtocolPolicy": "redirect-to-https",
+                  "ForwardedValues": {
+                    "QueryString": false,
+                    "Cookies": {
+                      "Forward": "none"
+                    }
+                  }
+                },
+                "PriceClass": "PriceClass_100",
+                "ViewerCertificate": {
+                  "CloudFrontDefaultCertificate": true
+                }
               }
             }
           }
         },
         "Outputs": {
           "ServerlessDeploymentBucketName": {
-            "Value": {
-              "Ref": "ServerlessDeploymentBucket"
-            },
+            "Value": "new-deployment-bucket-2446",
             "Export": {
-              "Name": "sls-my-service-dev-ServerlessDeploymentBucketName"
-            }
-          }
-        }
-      },
-      "coreCloudFormationTemplate": {
-        "AWSTemplateFormatVersion": "2010-09-09",
-        "Description": "The AWS CloudFormation template for this Serverless application",
-        "Resources": {
-          "ServerlessDeploymentBucket": {
-            "Type": "AWS::S3::Bucket",
-            "Properties": {
-              "BucketEncryption": {
-                "ServerSideEncryptionConfiguration": [
-                  {
-                    "ServerSideEncryptionByDefault": {
-                      "SSEAlgorithm": "AES256"
-                    }
-                  }
-                ]
-              }
-            }
-          },
-          "ServerlessDeploymentBucketPolicy": {
-            "Type": "AWS::S3::BucketPolicy",
-            "Properties": {
-              "Bucket": {
-                "Ref": "ServerlessDeploymentBucket"
-              },
-              "PolicyDocument": {
-                "Statement": [
-                  {
-                    "Action": "s3:*",
-                    "Effect": "Deny",
-                    "Principal": "*",
-                    "Resource": [
-                      {
-                        "Fn::Join": [
-                          "",
-                          [
-                            "arn:",
-                            {
-                              "Ref": "AWS::Partition"
-                            },
-                            ":s3:::",
-                            {
-                              "Ref": "ServerlessDeploymentBucket"
-                            },
-                            "/*"
-                          ]
-                        ]
-                      },
-                      {
-                        "Fn::Join": [
-                          "",
-                          [
-                            "arn:",
-                            {
-                              "Ref": "AWS::Partition"
-                            },
-                            ":s3:::",
-                            {
-                              "Ref": "ServerlessDeploymentBucket"
-                            }
-                          ]
-                        ]
-                      }
-                    ],
-                    "Condition": {
-                      "Bool": {
-                        "aws:SecureTransport": false
-                      }
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        },
-        "Outputs": {
-          "ServerlessDeploymentBucketName": {
-            "Value": {
-              "Ref": "ServerlessDeploymentBucket"
+              "Name": "sls-my-angular-app-dev-ServerlessDeploymentBucketName"
             }
           }
         }
       }
     },
     "custom": {
-      "finch": {
-        "bucketName": "e-commerce01"
-      },
-      "singlePageApp": {
-        "index": "index.html",
-        "error": "index.html"
+      "s3Sync": [
+        {
+          "bucketName": "e-commerce-03",
+          "localDir": "dist/app/browser"
+        }
+      ],
+      "client": {
+        "bucketName": "e-commerce-03",
+        "distributionFolder": "dist/app/browser",
+        "indexDocument": "index.html",
+        "errorDocument": "index.html"
       }
     },
-    "plugins": ["serverless-finch", "serverless-single-page-app-plugin"],
+    "plugins": [
+      "serverless-finch",
+      "serverless-s3-sync"
+    ],
     "pluginsData": {},
     "functions": {},
+    "resources": {
+      "Resources": {
+        "S3Bucket": {
+          "Type": "AWS::S3::Bucket",
+          "Properties": {
+            "BucketName": "e-commerce-03",
+            "AccessControl": "Private"
+          }
+        },
+        "BucketPolicy": {
+          "Type": "AWS::S3::BucketPolicy",
+          "Properties": {
+            "Bucket": "e-commerce-03",
+            "PolicyDocument": {
+              "Version": "2012-10-17",
+              "Statement": [
+                {
+                  "Effect": "Allow",
+                  "Principal": {
+                    "AWS": {
+                      "Fn::Sub": "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E3AKD80G2NZMT4"
+                    }
+                  },
+                  "Action": "s3:GetObject",
+                  "Resource": {
+                    "Fn::Sub": "arn:aws:s3:::e-commerce-03/*"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        "CloudFrontOriginAccessIdentity": {
+          "Type": "AWS::CloudFront::CloudFrontOriginAccessIdentity",
+          "Properties": {
+            "CloudFrontOriginAccessIdentityConfig": {
+              "Comment": "Access identity for my-angular-app CloudFront"
+            }
+          }
+        },
+        "MyDistribution": {
+          "Type": "AWS::CloudFront::Distribution",
+          "Properties": {
+            "DistributionConfig": {
+              "Enabled": true,
+              "Origins": [
+                {
+                  "DomainName": {
+                    "Fn::Sub": "e-commerce-03.s3.amazonaws.com"
+                  },
+                  "Id": "myS3Origin",
+                  "S3OriginConfig": {
+                    "OriginAccessIdentity": {
+                      "Fn::Sub": "origin-access-identity/cloudfront/E3AKD80G2NZMT4"
+                    }
+                  }
+                }
+              ],
+              "DefaultCacheBehavior": {
+                "TargetOriginId": "myS3Origin",
+                "ViewerProtocolPolicy": "redirect-to-https",
+                "ForwardedValues": {
+                  "QueryString": false,
+                  "Cookies": {
+                    "Forward": "none"
+                  }
+                }
+              },
+              "PriceClass": "PriceClass_100",
+              "ViewerCertificate": {
+                "CloudFrontDefaultCertificate": true
+              }
+            }
+          }
+        }
+      },
+      "Outputs": {}
+    },
     "configValidationMode": "warn",
     "serviceFilename": "serverless.yml",
     "initialServerlessConfig": {
+      "service": "my-angular-app",
+      "provider": {
+        "$ref": "$[\"service\"][\"provider\"]"
+      },
       "plugins": {
         "$ref": "$[\"service\"][\"plugins\"]"
       },
       "custom": {
         "$ref": "$[\"service\"][\"custom\"]"
       },
-      "service": "my-service",
-      "provider": {
-        "$ref": "$[\"service\"][\"provider\"]"
+      "resources": {
+        "$ref": "$[\"service\"][\"resources\"]"
+      },
+      "package": {
+        "exclude": [
+          "node_modules/**",
+          ".serverless/**",
+          ".webpack/**"
+        ],
+        "artifactsS3KeyDirname": "serverless/my-angular-app/dev/code-artifacts",
+        "deploymentBucket": "new-deployment-bucket-2446",
+        "artifactDirectoryName": "serverless/my-angular-app/dev/1718893554876-2024-06-20T14:25:54.876Z"
       }
     },
     "appId": null,
@@ -208,7 +232,7 @@
     "layers": {}
   },
   "package": {
-    "artifactDirectoryName": "serverless/my-service/dev/1717943494122-2024-06-09T14:31:34.122Z",
+    "artifactDirectoryName": "serverless/my-angular-app/dev/1718893554876-2024-06-20T14:25:54.876Z",
     "artifact": ""
   }
 }

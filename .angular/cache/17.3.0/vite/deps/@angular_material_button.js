@@ -10,14 +10,14 @@ import {
   MatIconAnchor,
   MatIconButton,
   MatMiniFabAnchor,
-  MatMiniFabButton,
+  MatMiniFabButton
 } from "./chunk-OMGPC2RI.js";
 import "./chunk-42MSPNLQ.js";
 import "./chunk-S4OX5VLO.js";
 import "./chunk-HP6DT5TB.js";
 import "./chunk-BAODPQS2.js";
-import "./chunk-UKEHM6V6.js";
 import "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import "./chunk-ZDOIMVJD.js";
 export {
   MAT_BUTTON_CONFIG,
@@ -31,6 +31,6 @@ export {
   MatIconAnchor,
   MatIconButton,
   MatMiniFabAnchor,
-  MatMiniFabButton,
+  MatMiniFabButton
 };
 //# sourceMappingURL=@angular_material_button.js.map

@@ -35,12 +35,12 @@ import {
   withJsonpSupport,
   withNoXsrfProtection,
   withRequestsMadeViaParent,
-  withXsrfConfiguration,
+  withXsrfConfiguration
 } from "./chunk-S67GE2DG.js";
 import "./chunk-HP6DT5TB.js";
 import "./chunk-BAODPQS2.js";
-import "./chunk-UKEHM6V6.js";
 import "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import "./chunk-ZDOIMVJD.js";
 export {
   FetchBackend,
@@ -80,6 +80,6 @@ export {
   HttpInterceptorHandler as ɵHttpInterceptingHandler,
   HttpInterceptorHandler as ɵHttpInterceptorHandler,
   PRIMARY_HTTP_BACKEND as ɵPRIMARY_HTTP_BACKEND,
-  withHttpTransferCache as ɵwithHttpTransferCache,
+  withHttpTransferCache as ɵwithHttpTransferCache
 };
 //# sourceMappingURL=@angular_common_http.js.map

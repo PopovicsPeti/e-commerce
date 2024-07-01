@@ -1,0 +1,9 @@
+{
+    "/api": {
+      "target": "https://yc1b9wcf50.execute-api.eu-north-1.amazonaws.com/default/products",
+      "secure": false,
+      "changeOrigin": true,
+      "pathRewrite": {"^/api": ""}
+    }
+  }
+  

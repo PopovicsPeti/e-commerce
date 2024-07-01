@@ -28,6 +28,7 @@
     "bootstrap": "^5.3.3",
     "ngxtension": "^2.1.0",
     "rxjs": "^7.8.0",
+    "serverless-s3-sync": "^3.3.0",
     "tslib": "^2.5.0",
     "zone.js": "^0.14.4"
   },

@@ -1,10 +1,14 @@
-import { MatCommonModule } from "./chunk-42MSPNLQ.js";
+import {
+  MatCommonModule
+} from "./chunk-42MSPNLQ.js";
 import {
   A11yModule,
   AriaDescriber,
-  InteractivityChecker,
+  InteractivityChecker
 } from "./chunk-S4OX5VLO.js";
-import { DOCUMENT } from "./chunk-HP6DT5TB.js";
+import {
+  DOCUMENT
+} from "./chunk-HP6DT5TB.js";
 import {
   ANIMATION_MODULE_TYPE,
   ApplicationRef,
@@ -32,17 +36,18 @@ import {
   ɵɵdefineDirective,
   ɵɵdefineInjector,
   ɵɵdefineNgModule,
-  ɵɵdirectiveInject,
+  ɵɵdirectiveInject
 } from "./chunk-BAODPQS2.js";
-import "./chunk-UKEHM6V6.js";
 import "./chunk-V2DXGMIT.js";
+import "./chunk-UKEHM6V6.js";
 import "./chunk-ZDOIMVJD.js";
 
 // node_modules/@angular/material/fesm2022/badge.mjs
 var nextId = 0;
 var BADGE_CONTENT_CLASS = "mat-badge-content";
 var badgeApps = /* @__PURE__ */ new Set();
-var __MatBadgeStyleLoader = class __MatBadgeStyleLoader {};
+var __MatBadgeStyleLoader = class __MatBadgeStyleLoader {
+};
 __MatBadgeStyleLoader.ɵfac = function _MatBadgeStyleLoader_Factory(t) {
   return new (t || __MatBadgeStyleLoader)();
 };
@@ -53,37 +58,24 @@ __MatBadgeStyleLoader.ɵcmp = ɵɵdefineComponent({
   features: [ɵɵStandaloneFeature],
   decls: 0,
   vars: 0,
-  template: function _MatBadgeStyleLoader_Template(rf, ctx) {},
-  styles: [
-    ".mat-badge{position:relative}.mat-badge.mat-badge{overflow:visible}.mat-badge-content{position:absolute;text-align:center;display:inline-block;transition:transform 200ms ease-in-out;transform:scale(0.6);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box;pointer-events:none;background-color:var(--mat-badge-background-color);color:var(--mat-badge-text-color);font-family:var(--mat-badge-text-font);font-weight:var(--mat-badge-text-weight);border-radius:var(--mat-badge-container-shape)}.cdk-high-contrast-active .mat-badge-content{outline:solid 1px;border-radius:0}.mat-badge-above .mat-badge-content{bottom:100%}.mat-badge-below .mat-badge-content{top:100%}.mat-badge-before .mat-badge-content{right:100%}[dir=rtl] .mat-badge-before .mat-badge-content{right:auto;left:100%}.mat-badge-after .mat-badge-content{left:100%}[dir=rtl] .mat-badge-after .mat-badge-content{left:auto;right:100%}.mat-badge-disabled .mat-badge-content{background-color:var(--mat-badge-disabled-state-background-color);color:var(--mat-badge-disabled-state-text-color)}.mat-badge-hidden .mat-badge-content{display:none}.ng-animate-disabled .mat-badge-content,.mat-badge-content._mat-animation-noopable{transition:none}.mat-badge-content.mat-badge-active{transform:none}.mat-badge-small .mat-badge-content{width:var(--mat-badge-legacy-small-size-container-size, unset);height:var(--mat-badge-legacy-small-size-container-size, unset);min-width:var(--mat-badge-small-size-container-size, unset);min-height:var(--mat-badge-small-size-container-size, unset);line-height:var(--mat-badge-legacy-small-size-container-size, var(--mat-badge-small-size-container-size));padding:var(--mat-badge-small-size-container-padding);font-size:var(--mat-badge-small-size-text-size);margin:var(--mat-badge-small-size-container-offset)}.mat-badge-small.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-small-size-container-overlap-offset)}.mat-badge-medium .mat-badge-content{width:var(--mat-badge-legacy-container-size, unset);height:var(--mat-badge-legacy-container-size, unset);min-width:var(--mat-badge-container-size, unset);min-height:var(--mat-badge-container-size, unset);line-height:var(--mat-badge-legacy-container-size, var(--mat-badge-container-size));padding:var(--mat-badge-container-padding);font-size:var(--mat-badge-text-size);margin:var(--mat-badge-container-offset)}.mat-badge-medium.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-container-overlap-offset)}.mat-badge-large .mat-badge-content{width:var(--mat-badge-legacy-large-size-container-size, unset);height:var(--mat-badge-legacy-large-size-container-size, unset);min-width:var(--mat-badge-large-size-container-size, unset);min-height:var(--mat-badge-large-size-container-size, unset);line-height:var(--mat-badge-legacy-large-size-container-size, var(--mat-badge-large-size-container-size));padding:var(--mat-badge-large-size-container-padding);font-size:var(--mat-badge-large-size-text-size);margin:var(--mat-badge-large-size-container-offset)}.mat-badge-large.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-large-size-container-overlap-offset)}",
-  ],
+  template: function _MatBadgeStyleLoader_Template(rf, ctx) {
+  },
+  styles: [".mat-badge{position:relative}.mat-badge.mat-badge{overflow:visible}.mat-badge-content{position:absolute;text-align:center;display:inline-block;transition:transform 200ms ease-in-out;transform:scale(0.6);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box;pointer-events:none;background-color:var(--mat-badge-background-color);color:var(--mat-badge-text-color);font-family:var(--mat-badge-text-font);font-weight:var(--mat-badge-text-weight);border-radius:var(--mat-badge-container-shape)}.cdk-high-contrast-active .mat-badge-content{outline:solid 1px;border-radius:0}.mat-badge-above .mat-badge-content{bottom:100%}.mat-badge-below .mat-badge-content{top:100%}.mat-badge-before .mat-badge-content{right:100%}[dir=rtl] .mat-badge-before .mat-badge-content{right:auto;left:100%}.mat-badge-after .mat-badge-content{left:100%}[dir=rtl] .mat-badge-after .mat-badge-content{left:auto;right:100%}.mat-badge-disabled .mat-badge-content{background-color:var(--mat-badge-disabled-state-background-color);color:var(--mat-badge-disabled-state-text-color)}.mat-badge-hidden .mat-badge-content{display:none}.ng-animate-disabled .mat-badge-content,.mat-badge-content._mat-animation-noopable{transition:none}.mat-badge-content.mat-badge-active{transform:none}.mat-badge-small .mat-badge-content{width:var(--mat-badge-legacy-small-size-container-size, unset);height:var(--mat-badge-legacy-small-size-container-size, unset);min-width:var(--mat-badge-small-size-container-size, unset);min-height:var(--mat-badge-small-size-container-size, unset);line-height:var(--mat-badge-legacy-small-size-container-size, var(--mat-badge-small-size-container-size));padding:var(--mat-badge-small-size-container-padding);font-size:var(--mat-badge-small-size-text-size);margin:var(--mat-badge-small-size-container-offset)}.mat-badge-small.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-small-size-container-overlap-offset)}.mat-badge-medium .mat-badge-content{width:var(--mat-badge-legacy-container-size, unset);height:var(--mat-badge-legacy-container-size, unset);min-width:var(--mat-badge-container-size, unset);min-height:var(--mat-badge-container-size, unset);line-height:var(--mat-badge-legacy-container-size, var(--mat-badge-container-size));padding:var(--mat-badge-container-padding);font-size:var(--mat-badge-text-size);margin:var(--mat-badge-container-offset)}.mat-badge-medium.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-container-overlap-offset)}.mat-badge-large .mat-badge-content{width:var(--mat-badge-legacy-large-size-container-size, unset);height:var(--mat-badge-legacy-large-size-container-size, unset);min-width:var(--mat-badge-large-size-container-size, unset);min-height:var(--mat-badge-large-size-container-size, unset);line-height:var(--mat-badge-legacy-large-size-container-size, var(--mat-badge-large-size-container-size));padding:var(--mat-badge-large-size-container-padding);font-size:var(--mat-badge-large-size-text-size);margin:var(--mat-badge-large-size-container-offset)}.mat-badge-large.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-large-size-container-overlap-offset)}"],
   encapsulation: 2,
-  changeDetection: 0,
+  changeDetection: 0
 });
 var _MatBadgeStyleLoader = __MatBadgeStyleLoader;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      _MatBadgeStyleLoader,
-      [
-        {
-          type: Component,
-          args: [
-            {
-              standalone: true,
-              encapsulation: ViewEncapsulation$1.None,
-              template: "",
-              changeDetection: ChangeDetectionStrategy.OnPush,
-              styles: [
-                ".mat-badge{position:relative}.mat-badge.mat-badge{overflow:visible}.mat-badge-content{position:absolute;text-align:center;display:inline-block;transition:transform 200ms ease-in-out;transform:scale(0.6);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box;pointer-events:none;background-color:var(--mat-badge-background-color);color:var(--mat-badge-text-color);font-family:var(--mat-badge-text-font);font-weight:var(--mat-badge-text-weight);border-radius:var(--mat-badge-container-shape)}.cdk-high-contrast-active .mat-badge-content{outline:solid 1px;border-radius:0}.mat-badge-above .mat-badge-content{bottom:100%}.mat-badge-below .mat-badge-content{top:100%}.mat-badge-before .mat-badge-content{right:100%}[dir=rtl] .mat-badge-before .mat-badge-content{right:auto;left:100%}.mat-badge-after .mat-badge-content{left:100%}[dir=rtl] .mat-badge-after .mat-badge-content{left:auto;right:100%}.mat-badge-disabled .mat-badge-content{background-color:var(--mat-badge-disabled-state-background-color);color:var(--mat-badge-disabled-state-text-color)}.mat-badge-hidden .mat-badge-content{display:none}.ng-animate-disabled .mat-badge-content,.mat-badge-content._mat-animation-noopable{transition:none}.mat-badge-content.mat-badge-active{transform:none}.mat-badge-small .mat-badge-content{width:var(--mat-badge-legacy-small-size-container-size, unset);height:var(--mat-badge-legacy-small-size-container-size, unset);min-width:var(--mat-badge-small-size-container-size, unset);min-height:var(--mat-badge-small-size-container-size, unset);line-height:var(--mat-badge-legacy-small-size-container-size, var(--mat-badge-small-size-container-size));padding:var(--mat-badge-small-size-container-padding);font-size:var(--mat-badge-small-size-text-size);margin:var(--mat-badge-small-size-container-offset)}.mat-badge-small.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-small-size-container-overlap-offset)}.mat-badge-medium .mat-badge-content{width:var(--mat-badge-legacy-container-size, unset);height:var(--mat-badge-legacy-container-size, unset);min-width:var(--mat-badge-container-size, unset);min-height:var(--mat-badge-container-size, unset);line-height:var(--mat-badge-legacy-container-size, var(--mat-badge-container-size));padding:var(--mat-badge-container-padding);font-size:var(--mat-badge-text-size);margin:var(--mat-badge-container-offset)}.mat-badge-medium.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-container-overlap-offset)}.mat-badge-large .mat-badge-content{width:var(--mat-badge-legacy-large-size-container-size, unset);height:var(--mat-badge-legacy-large-size-container-size, unset);min-width:var(--mat-badge-large-size-container-size, unset);min-height:var(--mat-badge-large-size-container-size, unset);line-height:var(--mat-badge-legacy-large-size-container-size, var(--mat-badge-large-size-container-size));padding:var(--mat-badge-large-size-container-padding);font-size:var(--mat-badge-large-size-text-size);margin:var(--mat-badge-large-size-container-offset)}.mat-badge-large.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-large-size-container-overlap-offset)}",
-              ],
-            },
-          ],
-        },
-      ],
-      null,
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_MatBadgeStyleLoader, [{
+    type: Component,
+    args: [{
+      standalone: true,
+      encapsulation: ViewEncapsulation$1.None,
+      template: "",
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      styles: [".mat-badge{position:relative}.mat-badge.mat-badge{overflow:visible}.mat-badge-content{position:absolute;text-align:center;display:inline-block;transition:transform 200ms ease-in-out;transform:scale(0.6);overflow:hidden;white-space:nowrap;text-overflow:ellipsis;box-sizing:border-box;pointer-events:none;background-color:var(--mat-badge-background-color);color:var(--mat-badge-text-color);font-family:var(--mat-badge-text-font);font-weight:var(--mat-badge-text-weight);border-radius:var(--mat-badge-container-shape)}.cdk-high-contrast-active .mat-badge-content{outline:solid 1px;border-radius:0}.mat-badge-above .mat-badge-content{bottom:100%}.mat-badge-below .mat-badge-content{top:100%}.mat-badge-before .mat-badge-content{right:100%}[dir=rtl] .mat-badge-before .mat-badge-content{right:auto;left:100%}.mat-badge-after .mat-badge-content{left:100%}[dir=rtl] .mat-badge-after .mat-badge-content{left:auto;right:100%}.mat-badge-disabled .mat-badge-content{background-color:var(--mat-badge-disabled-state-background-color);color:var(--mat-badge-disabled-state-text-color)}.mat-badge-hidden .mat-badge-content{display:none}.ng-animate-disabled .mat-badge-content,.mat-badge-content._mat-animation-noopable{transition:none}.mat-badge-content.mat-badge-active{transform:none}.mat-badge-small .mat-badge-content{width:var(--mat-badge-legacy-small-size-container-size, unset);height:var(--mat-badge-legacy-small-size-container-size, unset);min-width:var(--mat-badge-small-size-container-size, unset);min-height:var(--mat-badge-small-size-container-size, unset);line-height:var(--mat-badge-legacy-small-size-container-size, var(--mat-badge-small-size-container-size));padding:var(--mat-badge-small-size-container-padding);font-size:var(--mat-badge-small-size-text-size);margin:var(--mat-badge-small-size-container-offset)}.mat-badge-small.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-small-size-container-overlap-offset)}.mat-badge-medium .mat-badge-content{width:var(--mat-badge-legacy-container-size, unset);height:var(--mat-badge-legacy-container-size, unset);min-width:var(--mat-badge-container-size, unset);min-height:var(--mat-badge-container-size, unset);line-height:var(--mat-badge-legacy-container-size, var(--mat-badge-container-size));padding:var(--mat-badge-container-padding);font-size:var(--mat-badge-text-size);margin:var(--mat-badge-container-offset)}.mat-badge-medium.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-container-overlap-offset)}.mat-badge-large .mat-badge-content{width:var(--mat-badge-legacy-large-size-container-size, unset);height:var(--mat-badge-legacy-large-size-container-size, unset);min-width:var(--mat-badge-large-size-container-size, unset);min-height:var(--mat-badge-large-size-container-size, unset);line-height:var(--mat-badge-legacy-large-size-container-size, var(--mat-badge-large-size-container-size));padding:var(--mat-badge-large-size-container-padding);font-size:var(--mat-badge-large-size-text-size);margin:var(--mat-badge-large-size-container-offset)}.mat-badge-large.mat-badge-overlap .mat-badge-content{margin:var(--mat-badge-large-size-container-overlap-offset)}"]
+    }]
+  }], null, null);
 })();
 var _MatBadge = class _MatBadge {
   /** The color of the badge. Can be `primary`, `accent`, or `warn`. */
@@ -126,7 +118,7 @@ var _MatBadge = class _MatBadge {
     if (!badgeApps.has(appRef)) {
       badgeApps.add(appRef);
       const componentRef = createComponent(_MatBadgeStyleLoader, {
-        environmentInjector: inject(EnvironmentInjector),
+        environmentInjector: inject(EnvironmentInjector)
       });
       appRef.onDestroy(() => {
         badgeApps.delete(appRef);
@@ -141,10 +133,7 @@ var _MatBadge = class _MatBadge {
         throw Error("matBadge must be attached to an element node.");
       }
       const matIconTagName = "mat-icon";
-      if (
-        nativeElement.tagName.toLowerCase() === matIconTagName &&
-        nativeElement.getAttribute("aria-hidden") === "true"
-      ) {
+      if (nativeElement.tagName.toLowerCase() === matIconTagName && nativeElement.getAttribute("aria-hidden") === "true") {
         console.warn(`Detected a matBadge on an "aria-hidden" "<mat-icon>". Consider setting aria-hidden="false" in order to surface the information assistive technology.
 ${nativeElement.outerHTML}`);
       }
@@ -178,19 +167,13 @@ ${nativeElement.outerHTML}`);
       this._renderer.destroyNode(this._badgeElement);
       this._inlineBadgeDescription?.remove();
     }
-    this._ariaDescriber.removeDescription(
-      this._elementRef.nativeElement,
-      this.description,
-    );
+    this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this.description);
   }
   /** Gets whether the badge's host element is interactive. */
   _isHostInteractive() {
-    return this._interactivityChecker.isFocusable(
-      this._elementRef.nativeElement,
-      {
-        ignoreVisibility: true,
-      },
-    );
+    return this._interactivityChecker.isFocusable(this._elementRef.nativeElement, {
+      ignoreVisibility: true
+    });
   }
   /** Creates the badge element */
   _createBadgeElement() {
@@ -203,10 +186,7 @@ ${nativeElement.outerHTML}`);
       badgeElement.classList.add("_mat-animation-noopable");
     }
     this._elementRef.nativeElement.appendChild(badgeElement);
-    if (
-      typeof requestAnimationFrame === "function" &&
-      this._animationMode !== "NoopAnimations"
-    ) {
+    if (typeof requestAnimationFrame === "function" && this._animationMode !== "NoopAnimations") {
       this._ngZone.runOutsideAngular(() => {
         requestAnimationFrame(() => {
           badgeElement.classList.add(activeClass);
@@ -230,19 +210,13 @@ ${nativeElement.outerHTML}`);
   }
   /** Updates the host element's aria description via AriaDescriber. */
   _updateDescription(newDescription) {
-    this._ariaDescriber.removeDescription(
-      this._elementRef.nativeElement,
-      this.description,
-    );
+    this._ariaDescriber.removeDescription(this._elementRef.nativeElement, this.description);
     if (!newDescription || this._isHostInteractive()) {
       this._removeInlineDescription();
     }
     this._description = newDescription;
     if (this._isHostInteractive()) {
-      this._ariaDescriber.describe(
-        this._elementRef.nativeElement,
-        newDescription,
-      );
+      this._ariaDescriber.describe(this._elementRef.nativeElement, newDescription);
     } else {
       this._updateInlineDescription();
     }
@@ -269,9 +243,7 @@ ${nativeElement.outerHTML}`);
   }
   /** Clears any existing badges that might be left over from server-side rendering. */
   _clearExistingBadges() {
-    const badges = this._elementRef.nativeElement.querySelectorAll(
-      `:scope > .${BADGE_CONTENT_CLASS}`,
-    );
+    const badges = this._elementRef.nativeElement.querySelectorAll(`:scope > .${BADGE_CONTENT_CLASS}`);
     for (const badgeElement of Array.from(badges)) {
       if (badgeElement !== this._badgeElement) {
         badgeElement.remove();
@@ -280,13 +252,7 @@ ${nativeElement.outerHTML}`);
   }
 };
 _MatBadge.ɵfac = function MatBadge_Factory(t) {
-  return new (t || _MatBadge)(
-    ɵɵdirectiveInject(NgZone),
-    ɵɵdirectiveInject(ElementRef),
-    ɵɵdirectiveInject(AriaDescriber),
-    ɵɵdirectiveInject(Renderer2),
-    ɵɵdirectiveInject(ANIMATION_MODULE_TYPE, 8),
-  );
+  return new (t || _MatBadge)(ɵɵdirectiveInject(NgZone), ɵɵdirectiveInject(ElementRef), ɵɵdirectiveInject(AriaDescriber), ɵɵdirectiveInject(Renderer2), ɵɵdirectiveInject(ANIMATION_MODULE_TYPE, 8));
 };
 _MatBadge.ɵdir = ɵɵdefineDirective({
   type: _MatBadge,
@@ -295,209 +261,130 @@ _MatBadge.ɵdir = ɵɵdefineDirective({
   hostVars: 20,
   hostBindings: function MatBadge_HostBindings(rf, ctx) {
     if (rf & 2) {
-      ɵɵclassProp("mat-badge-overlap", ctx.overlap)(
-        "mat-badge-above",
-        ctx.isAbove(),
-      )("mat-badge-below", !ctx.isAbove())("mat-badge-before", !ctx.isAfter())(
-        "mat-badge-after",
-        ctx.isAfter(),
-      )("mat-badge-small", ctx.size === "small")(
-        "mat-badge-medium",
-        ctx.size === "medium",
-      )("mat-badge-large", ctx.size === "large")(
-        "mat-badge-hidden",
-        ctx.hidden || !ctx.content,
-      )("mat-badge-disabled", ctx.disabled);
+      ɵɵclassProp("mat-badge-overlap", ctx.overlap)("mat-badge-above", ctx.isAbove())("mat-badge-below", !ctx.isAbove())("mat-badge-before", !ctx.isAfter())("mat-badge-after", ctx.isAfter())("mat-badge-small", ctx.size === "small")("mat-badge-medium", ctx.size === "medium")("mat-badge-large", ctx.size === "large")("mat-badge-hidden", ctx.hidden || !ctx.content)("mat-badge-disabled", ctx.disabled);
     }
   },
   inputs: {
     color: [InputFlags.None, "matBadgeColor", "color"],
-    overlap: [
-      InputFlags.HasDecoratorInputTransform,
-      "matBadgeOverlap",
-      "overlap",
-      booleanAttribute,
-    ],
-    disabled: [
-      InputFlags.HasDecoratorInputTransform,
-      "matBadgeDisabled",
-      "disabled",
-      booleanAttribute,
-    ],
+    overlap: [InputFlags.HasDecoratorInputTransform, "matBadgeOverlap", "overlap", booleanAttribute],
+    disabled: [InputFlags.HasDecoratorInputTransform, "matBadgeDisabled", "disabled", booleanAttribute],
     position: [InputFlags.None, "matBadgePosition", "position"],
     content: [InputFlags.None, "matBadge", "content"],
     description: [InputFlags.None, "matBadgeDescription", "description"],
     size: [InputFlags.None, "matBadgeSize", "size"],
-    hidden: [
-      InputFlags.HasDecoratorInputTransform,
-      "matBadgeHidden",
-      "hidden",
-      booleanAttribute,
-    ],
+    hidden: [InputFlags.HasDecoratorInputTransform, "matBadgeHidden", "hidden", booleanAttribute]
   },
   standalone: true,
-  features: [ɵɵInputTransformsFeature],
+  features: [ɵɵInputTransformsFeature]
 });
 var MatBadge = _MatBadge;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      MatBadge,
-      [
-        {
-          type: Directive,
-          args: [
-            {
-              selector: "[matBadge]",
-              host: {
-                class: "mat-badge",
-                "[class.mat-badge-overlap]": "overlap",
-                "[class.mat-badge-above]": "isAbove()",
-                "[class.mat-badge-below]": "!isAbove()",
-                "[class.mat-badge-before]": "!isAfter()",
-                "[class.mat-badge-after]": "isAfter()",
-                "[class.mat-badge-small]": 'size === "small"',
-                "[class.mat-badge-medium]": 'size === "medium"',
-                "[class.mat-badge-large]": 'size === "large"',
-                "[class.mat-badge-hidden]": "hidden || !content",
-                "[class.mat-badge-disabled]": "disabled",
-              },
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: NgZone,
-        },
-        {
-          type: ElementRef,
-        },
-        {
-          type: AriaDescriber,
-        },
-        {
-          type: Renderer2,
-        },
-        {
-          type: void 0,
-          decorators: [
-            {
-              type: Optional,
-            },
-            {
-              type: Inject,
-              args: [ANIMATION_MODULE_TYPE],
-            },
-          ],
-        },
-      ],
-      {
-        color: [
-          {
-            type: Input,
-            args: ["matBadgeColor"],
-          },
-        ],
-        overlap: [
-          {
-            type: Input,
-            args: [
-              {
-                alias: "matBadgeOverlap",
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-        disabled: [
-          {
-            type: Input,
-            args: [
-              {
-                alias: "matBadgeDisabled",
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-        position: [
-          {
-            type: Input,
-            args: ["matBadgePosition"],
-          },
-        ],
-        content: [
-          {
-            type: Input,
-            args: ["matBadge"],
-          },
-        ],
-        description: [
-          {
-            type: Input,
-            args: ["matBadgeDescription"],
-          },
-        ],
-        size: [
-          {
-            type: Input,
-            args: ["matBadgeSize"],
-          },
-        ],
-        hidden: [
-          {
-            type: Input,
-            args: [
-              {
-                alias: "matBadgeHidden",
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatBadge, [{
+    type: Directive,
+    args: [{
+      selector: "[matBadge]",
+      host: {
+        "class": "mat-badge",
+        "[class.mat-badge-overlap]": "overlap",
+        "[class.mat-badge-above]": "isAbove()",
+        "[class.mat-badge-below]": "!isAbove()",
+        "[class.mat-badge-before]": "!isAfter()",
+        "[class.mat-badge-after]": "isAfter()",
+        "[class.mat-badge-small]": 'size === "small"',
+        "[class.mat-badge-medium]": 'size === "medium"',
+        "[class.mat-badge-large]": 'size === "large"',
+        "[class.mat-badge-hidden]": "hidden || !content",
+        "[class.mat-badge-disabled]": "disabled"
       },
-    );
+      standalone: true
+    }]
+  }], () => [{
+    type: NgZone
+  }, {
+    type: ElementRef
+  }, {
+    type: AriaDescriber
+  }, {
+    type: Renderer2
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Optional
+    }, {
+      type: Inject,
+      args: [ANIMATION_MODULE_TYPE]
+    }]
+  }], {
+    color: [{
+      type: Input,
+      args: ["matBadgeColor"]
+    }],
+    overlap: [{
+      type: Input,
+      args: [{
+        alias: "matBadgeOverlap",
+        transform: booleanAttribute
+      }]
+    }],
+    disabled: [{
+      type: Input,
+      args: [{
+        alias: "matBadgeDisabled",
+        transform: booleanAttribute
+      }]
+    }],
+    position: [{
+      type: Input,
+      args: ["matBadgePosition"]
+    }],
+    content: [{
+      type: Input,
+      args: ["matBadge"]
+    }],
+    description: [{
+      type: Input,
+      args: ["matBadgeDescription"]
+    }],
+    size: [{
+      type: Input,
+      args: ["matBadgeSize"]
+    }],
+    hidden: [{
+      type: Input,
+      args: [{
+        alias: "matBadgeHidden",
+        transform: booleanAttribute
+      }]
+    }]
+  });
 })();
-var _MatBadgeModule = class _MatBadgeModule {};
+var _MatBadgeModule = class _MatBadgeModule {
+};
 _MatBadgeModule.ɵfac = function MatBadgeModule_Factory(t) {
   return new (t || _MatBadgeModule)();
 };
 _MatBadgeModule.ɵmod = ɵɵdefineNgModule({
   type: _MatBadgeModule,
   imports: [A11yModule, MatCommonModule, MatBadge, _MatBadgeStyleLoader],
-  exports: [MatBadge, MatCommonModule],
+  exports: [MatBadge, MatCommonModule]
 });
 _MatBadgeModule.ɵinj = ɵɵdefineInjector({
-  imports: [A11yModule, MatCommonModule, MatCommonModule],
+  imports: [A11yModule, MatCommonModule, MatCommonModule]
 });
 var MatBadgeModule = _MatBadgeModule;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      MatBadgeModule,
-      [
-        {
-          type: NgModule,
-          args: [
-            {
-              // Note: we _shouldn't_ have to import `_MatBadgeStyleLoader`,
-              // but it seems to be necessary for tests.
-              imports: [
-                A11yModule,
-                MatCommonModule,
-                MatBadge,
-                _MatBadgeStyleLoader,
-              ],
-              exports: [MatBadge, MatCommonModule],
-            },
-          ],
-        },
-      ],
-      null,
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(MatBadgeModule, [{
+    type: NgModule,
+    args: [{
+      // Note: we _shouldn't_ have to import `_MatBadgeStyleLoader`,
+      // but it seems to be necessary for tests.
+      imports: [A11yModule, MatCommonModule, MatBadge, _MatBadgeStyleLoader],
+      exports: [MatBadge, MatCommonModule]
+    }]
+  }], null, null);
 })();
-export { MatBadge, MatBadgeModule };
+export {
+  MatBadge,
+  MatBadgeModule
+};
 //# sourceMappingURL=@angular_material_badge.js.map

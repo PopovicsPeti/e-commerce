@@ -1,0 +1,14 @@
+{
+    "Records": [
+      {
+        "s3": {
+          "bucket": {
+            "name": "product-service-dev-serverlessdeploymentbucket-zaa6fmhns43p"
+          },
+          "object": {
+            "key": "import/example.csv"
+          }
+        }
+      }
+    ]
+  }

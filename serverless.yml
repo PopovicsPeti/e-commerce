@@ -2,48 +2,45 @@ service: my-angular-app
 
 provider:
   name: aws
-  runtime: nodejs14.x
-  region: us-east-1
+  runtime: nodejs20.x
+  region: eu-north-1
+  deploymentBucket:
+    name: new-deployment-bucket-2446
 
 plugins:
   - serverless-finch
-  - serverless-cloudfront-invalidate
+  - serverless-s3-sync
 
 custom:
+  s3Sync:
+    - bucketName: e-commerce-03
+      localDir: dist/app/browser
   client:
-    bucketName: e-commerce01
+    bucketName: e-commerce-03
     distributionFolder: dist/app/browser
     indexDocument: index.html
     errorDocument: index.html
-  cloudfrontInvalidate:
-    distributionId: E21ZVQWBQYPKC6
-    items:
-      - "/*"
 
 resources:
   Resources:
     S3Bucket:
       Type: AWS::S3::Bucket
       Properties:
-        BucketName: e-commerce01
+        BucketName: e-commerce-03
         AccessControl: Private
 
     BucketPolicy:
       Type: AWS::S3::BucketPolicy
       Properties:
-        Bucket: e-commerce01
+        Bucket: e-commerce-03
         PolicyDocument:
           Version: "2012-10-17"
           Statement:
             - Effect: Allow
               Principal:
-                CanonicalUser:
-                  {
-                    "Fn::GetAtt":
-                      ["CloudFrontOriginAccessIdentity", "S3CanonicalUserId"],
-                  }
+                AWS: !Sub "arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E3AKD80G2NZMT4"
               Action: "s3:GetObject"
-              Resource: "arn:aws:s3:::e-commerce01/*"
+              Resource: !Sub "arn:aws:s3:::e-commerce-03/*"
 
     CloudFrontOriginAccessIdentity:
       Type: AWS::CloudFront::CloudFrontOriginAccessIdentity
@@ -57,14 +54,10 @@ resources:
         DistributionConfig:
           Enabled: true
           Origins:
-            - DomainName: e-commerce01.s3.amazonaws.com
+            - DomainName: !Sub "e-commerce-03.s3.amazonaws.com"
               Id: myS3Origin
               S3OriginConfig:
-                OriginAccessIdentity:
-                  "Fn::Join":
-                    - ""
-                    - - "origin-access-identity/cloudfront/"
-                      - Ref: CloudFrontOriginAccessIdentity
+                OriginAccessIdentity: !Sub "origin-access-identity/cloudfront/E3AKD80G2NZMT4"
           DefaultCacheBehavior:
             TargetOriginId: myS3Origin
             ViewerProtocolPolicy: redirect-to-https

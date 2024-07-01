@@ -7,6 +7,7 @@ import {
   inject,
   Injector,
   input,
+  OnInit,
   viewChild,
 } from '@angular/core';
 import { Product } from '../product.interface';
@@ -49,7 +50,21 @@ import {
 })
 export class ProductItemComponent {
   product = input.required<Product>();
-  index = input.required<number>();
+  index = input.required<number>();  
+  
+
+  productImages = [
+    "assets/1.webp",
+    "assets/2.webp",
+    "assets/3.webp",
+    "assets/4.webp",
+    "assets/5.webp",
+    "assets/6.jpg",
+    "assets/7.webp",
+    "assets/8.jpg",
+    "assets/9.jpg",
+  ];
+  imageIndex =  Math.floor(Math.random() * this.productImages.length);
 
   cartBtn = viewChild('cartBtn', { read: ElementRef<HTMLButtonElement> });
   countControls = viewChild('controls', { read: CartCountControlsComponent });

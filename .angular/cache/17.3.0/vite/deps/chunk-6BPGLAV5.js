@@ -5,7 +5,7 @@ import {
   FocusKeyManager,
   SPACE,
   _getFocusedElementPierceShadowDom,
-  hasModifierKey,
+  hasModifierKey
 } from "./chunk-S4OX5VLO.js";
 import {
   ChangeDetectionStrategy,
@@ -47,9 +47,14 @@ import {
   ɵɵprojectionDef,
   ɵɵqueryRefresh,
   ɵɵtemplate,
-  ɵɵviewQuery,
+  ɵɵviewQuery
 } from "./chunk-BAODPQS2.js";
-import { Subject, of, startWith, takeUntil } from "./chunk-ZDOIMVJD.js";
+import {
+  Subject,
+  of,
+  startWith,
+  takeUntil
+} from "./chunk-ZDOIMVJD.js";
 
 // node_modules/@angular/cdk/fesm2022/stepper.mjs
 var _c0 = ["*"];
@@ -74,34 +79,22 @@ _CdkStepHeader.ɵdir = ɵɵdefineDirective({
   type: _CdkStepHeader,
   selectors: [["", "cdkStepHeader", ""]],
   hostAttrs: ["role", "tab"],
-  standalone: true,
+  standalone: true
 });
 var CdkStepHeader = _CdkStepHeader;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStepHeader,
-      [
-        {
-          type: Directive,
-          args: [
-            {
-              selector: "[cdkStepHeader]",
-              host: {
-                role: "tab",
-              },
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: ElementRef,
-        },
-      ],
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepHeader, [{
+    type: Directive,
+    args: [{
+      selector: "[cdkStepHeader]",
+      host: {
+        "role": "tab"
+      },
+      standalone: true
+    }]
+  }], () => [{
+    type: ElementRef
+  }], null);
 })();
 var _CdkStepLabel = class _CdkStepLabel {
   constructor(template) {
@@ -114,61 +107,44 @@ _CdkStepLabel.ɵfac = function CdkStepLabel_Factory(t) {
 _CdkStepLabel.ɵdir = ɵɵdefineDirective({
   type: _CdkStepLabel,
   selectors: [["", "cdkStepLabel", ""]],
-  standalone: true,
+  standalone: true
 });
 var CdkStepLabel = _CdkStepLabel;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStepLabel,
-      [
-        {
-          type: Directive,
-          args: [
-            {
-              selector: "[cdkStepLabel]",
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: TemplateRef,
-        },
-      ],
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepLabel, [{
+    type: Directive,
+    args: [{
+      selector: "[cdkStepLabel]",
+      standalone: true
+    }]
+  }], () => [{
+    type: TemplateRef
+  }], null);
 })();
 var nextId = 0;
-var StepperSelectionEvent = class {};
+var StepperSelectionEvent = class {
+};
 var STEP_STATE = {
   NUMBER: "number",
   EDIT: "edit",
   DONE: "done",
-  ERROR: "error",
+  ERROR: "error"
 };
 var STEPPER_GLOBAL_OPTIONS = new InjectionToken("STEPPER_GLOBAL_OPTIONS");
 var _CdkStep = class _CdkStep {
   /** Whether step is marked as completed. */
   get completed() {
-    return this._completedOverride == null
-      ? this._getDefaultCompleted()
-      : this._completedOverride;
+    return this._completedOverride == null ? this._getDefaultCompleted() : this._completedOverride;
   }
   set completed(value) {
     this._completedOverride = value;
   }
   _getDefaultCompleted() {
-    return this.stepControl
-      ? this.stepControl.valid && this.interacted
-      : this.interacted;
+    return this.stepControl ? this.stepControl.valid && this.interacted : this.interacted;
   }
   /** Whether step has an error. */
   get hasError() {
-    return this._customError == null
-      ? this._getDefaultError()
-      : this._customError;
+    return this._customError == null ? this._getDefaultError() : this._customError;
   }
   set hasError(value) {
     this._customError = value;
@@ -185,8 +161,7 @@ var _CdkStep = class _CdkStep {
     this._completedOverride = null;
     this._customError = null;
     this._stepperOptions = stepperOptions ? stepperOptions : {};
-    this._displayDefaultIndicatorType =
-      this._stepperOptions.displayDefaultIndicatorType !== false;
+    this._displayDefaultIndicatorType = this._stepperOptions.displayDefaultIndicatorType !== false;
   }
   /** Selects this step component. */
   select() {
@@ -220,10 +195,7 @@ var _CdkStep = class _CdkStep {
   }
 };
 _CdkStep.ɵfac = function CdkStep_Factory(t) {
-  return new (t || _CdkStep)(
-    ɵɵdirectiveInject(forwardRef(() => CdkStepper)),
-    ɵɵdirectiveInject(STEPPER_GLOBAL_OPTIONS, 8),
-  );
+  return new (t || _CdkStep)(ɵɵdirectiveInject(forwardRef(() => CdkStepper)), ɵɵdirectiveInject(STEPPER_GLOBAL_OPTIONS, 8));
 };
 _CdkStep.ɵcmp = ɵɵdefineComponent({
   type: _CdkStep,
@@ -234,7 +206,7 @@ _CdkStep.ɵcmp = ɵɵdefineComponent({
     }
     if (rf & 2) {
       let _t;
-      ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx.stepLabel = _t.first);
+      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.stepLabel = _t.first);
     }
   },
   viewQuery: function CdkStep_Query(rf, ctx) {
@@ -243,7 +215,7 @@ _CdkStep.ɵcmp = ɵɵdefineComponent({
     }
     if (rf & 2) {
       let _t;
-      ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx.content = _t.first);
+      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx.content = _t.first);
     }
   },
   inputs: {
@@ -253,41 +225,17 @@ _CdkStep.ɵcmp = ɵɵdefineComponent({
     ariaLabel: [InputFlags.None, "aria-label", "ariaLabel"],
     ariaLabelledby: [InputFlags.None, "aria-labelledby", "ariaLabelledby"],
     state: "state",
-    editable: [
-      InputFlags.HasDecoratorInputTransform,
-      "editable",
-      "editable",
-      booleanAttribute,
-    ],
-    optional: [
-      InputFlags.HasDecoratorInputTransform,
-      "optional",
-      "optional",
-      booleanAttribute,
-    ],
-    completed: [
-      InputFlags.HasDecoratorInputTransform,
-      "completed",
-      "completed",
-      booleanAttribute,
-    ],
-    hasError: [
-      InputFlags.HasDecoratorInputTransform,
-      "hasError",
-      "hasError",
-      booleanAttribute,
-    ],
+    editable: [InputFlags.HasDecoratorInputTransform, "editable", "editable", booleanAttribute],
+    optional: [InputFlags.HasDecoratorInputTransform, "optional", "optional", booleanAttribute],
+    completed: [InputFlags.HasDecoratorInputTransform, "completed", "completed", booleanAttribute],
+    hasError: [InputFlags.HasDecoratorInputTransform, "hasError", "hasError", booleanAttribute]
   },
   outputs: {
-    interactedStream: "interacted",
+    interactedStream: "interacted"
   },
   exportAs: ["cdkStep"],
   standalone: true,
-  features: [
-    ɵɵInputTransformsFeature,
-    ɵɵNgOnChangesFeature,
-    ɵɵStandaloneFeature,
-  ],
+  features: [ɵɵInputTransformsFeature, ɵɵNgOnChangesFeature, ɵɵStandaloneFeature],
   ngContentSelectors: _c0,
   decls: 1,
   vars: 0,
@@ -298,149 +246,94 @@ _CdkStep.ɵcmp = ɵɵdefineComponent({
     }
   },
   encapsulation: 2,
-  changeDetection: 0,
+  changeDetection: 0
 });
 var CdkStep = _CdkStep;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStep,
-      [
-        {
-          type: Component,
-          args: [
-            {
-              selector: "cdk-step",
-              exportAs: "cdkStep",
-              template: "<ng-template><ng-content></ng-content></ng-template>",
-              encapsulation: ViewEncapsulation$1.None,
-              changeDetection: ChangeDetectionStrategy.OnPush,
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: CdkStepper,
-          decorators: [
-            {
-              type: Inject,
-              args: [forwardRef(() => CdkStepper)],
-            },
-          ],
-        },
-        {
-          type: void 0,
-          decorators: [
-            {
-              type: Optional,
-            },
-            {
-              type: Inject,
-              args: [STEPPER_GLOBAL_OPTIONS],
-            },
-          ],
-        },
-      ],
-      {
-        stepLabel: [
-          {
-            type: ContentChild,
-            args: [CdkStepLabel],
-          },
-        ],
-        content: [
-          {
-            type: ViewChild,
-            args: [
-              TemplateRef,
-              {
-                static: true,
-              },
-            ],
-          },
-        ],
-        stepControl: [
-          {
-            type: Input,
-          },
-        ],
-        interactedStream: [
-          {
-            type: Output,
-            args: ["interacted"],
-          },
-        ],
-        label: [
-          {
-            type: Input,
-          },
-        ],
-        errorMessage: [
-          {
-            type: Input,
-          },
-        ],
-        ariaLabel: [
-          {
-            type: Input,
-            args: ["aria-label"],
-          },
-        ],
-        ariaLabelledby: [
-          {
-            type: Input,
-            args: ["aria-labelledby"],
-          },
-        ],
-        state: [
-          {
-            type: Input,
-          },
-        ],
-        editable: [
-          {
-            type: Input,
-            args: [
-              {
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-        optional: [
-          {
-            type: Input,
-            args: [
-              {
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-        completed: [
-          {
-            type: Input,
-            args: [
-              {
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-        hasError: [
-          {
-            type: Input,
-            args: [
-              {
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-      },
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStep, [{
+    type: Component,
+    args: [{
+      selector: "cdk-step",
+      exportAs: "cdkStep",
+      template: "<ng-template><ng-content></ng-content></ng-template>",
+      encapsulation: ViewEncapsulation$1.None,
+      changeDetection: ChangeDetectionStrategy.OnPush,
+      standalone: true
+    }]
+  }], () => [{
+    type: CdkStepper,
+    decorators: [{
+      type: Inject,
+      args: [forwardRef(() => CdkStepper)]
+    }]
+  }, {
+    type: void 0,
+    decorators: [{
+      type: Optional
+    }, {
+      type: Inject,
+      args: [STEPPER_GLOBAL_OPTIONS]
+    }]
+  }], {
+    stepLabel: [{
+      type: ContentChild,
+      args: [CdkStepLabel]
+    }],
+    content: [{
+      type: ViewChild,
+      args: [TemplateRef, {
+        static: true
+      }]
+    }],
+    stepControl: [{
+      type: Input
+    }],
+    interactedStream: [{
+      type: Output,
+      args: ["interacted"]
+    }],
+    label: [{
+      type: Input
+    }],
+    errorMessage: [{
+      type: Input
+    }],
+    ariaLabel: [{
+      type: Input,
+      args: ["aria-label"]
+    }],
+    ariaLabelledby: [{
+      type: Input,
+      args: ["aria-labelledby"]
+    }],
+    state: [{
+      type: Input
+    }],
+    editable: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    optional: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    completed: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    hasError: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }]
+  });
 })();
 var _CdkStepper = class _CdkStepper {
   /** The index of the selected step. */
@@ -449,20 +342,11 @@ var _CdkStepper = class _CdkStepper {
   }
   set selectedIndex(index) {
     if (this.steps && this._steps) {
-      if (
-        !this._isValidIndex(index) &&
-        (typeof ngDevMode === "undefined" || ngDevMode)
-      ) {
-        throw Error(
-          "cdkStepper: Cannot assign out-of-bounds value to `selectedIndex`.",
-        );
+      if (!this._isValidIndex(index) && (typeof ngDevMode === "undefined" || ngDevMode)) {
+        throw Error("cdkStepper: Cannot assign out-of-bounds value to `selectedIndex`.");
       }
       this.selected?._markAsInteracted();
-      if (
-        this._selectedIndex !== index &&
-        !this._anyControlsInvalidOrPending(index) &&
-        (index >= this._selectedIndex || this.steps.toArray()[index].editable)
-      ) {
+      if (this._selectedIndex !== index && !this._anyControlsInvalidOrPending(index) && (index >= this._selectedIndex || this.steps.toArray()[index].editable)) {
         this._updateSelectedItemIndex(index);
       }
     } else {
@@ -474,8 +358,7 @@ var _CdkStepper = class _CdkStepper {
     return this.steps ? this.steps.toArray()[this.selectedIndex] : void 0;
   }
   set selected(step) {
-    this.selectedIndex =
-      step && this.steps ? this.steps.toArray().indexOf(step) : -1;
+    this.selectedIndex = step && this.steps ? this.steps.toArray().indexOf(step) : -1;
   }
   /** Orientation of the stepper. */
   get orientation() {
@@ -502,37 +385,21 @@ var _CdkStepper = class _CdkStepper {
     this._groupId = nextId++;
   }
   ngAfterContentInit() {
-    this._steps.changes
-      .pipe(startWith(this._steps), takeUntil(this._destroyed))
-      .subscribe((steps) => {
-        this.steps.reset(steps.filter((step) => step._stepper === this));
-        this.steps.notifyOnChanges();
-      });
+    this._steps.changes.pipe(startWith(this._steps), takeUntil(this._destroyed)).subscribe((steps) => {
+      this.steps.reset(steps.filter((step) => step._stepper === this));
+      this.steps.notifyOnChanges();
+    });
   }
   ngAfterViewInit() {
-    this._stepHeader.changes
-      .pipe(startWith(this._stepHeader), takeUntil(this._destroyed))
-      .subscribe((headers) => {
-        this._sortedHeaders.reset(
-          headers.toArray().sort((a, b) => {
-            const documentPosition =
-              a._elementRef.nativeElement.compareDocumentPosition(
-                b._elementRef.nativeElement,
-              );
-            return documentPosition & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
-          }),
-        );
-        this._sortedHeaders.notifyOnChanges();
-      });
-    this._keyManager = new FocusKeyManager(this._sortedHeaders)
-      .withWrap()
-      .withHomeAndEnd()
-      .withVerticalOrientation(this._orientation === "vertical");
-    (this._dir ? this._dir.change : of())
-      .pipe(startWith(this._layoutDirection()), takeUntil(this._destroyed))
-      .subscribe((direction) =>
-        this._keyManager.withHorizontalOrientation(direction),
-      );
+    this._stepHeader.changes.pipe(startWith(this._stepHeader), takeUntil(this._destroyed)).subscribe((headers) => {
+      this._sortedHeaders.reset(headers.toArray().sort((a, b) => {
+        const documentPosition = a._elementRef.nativeElement.compareDocumentPosition(b._elementRef.nativeElement);
+        return documentPosition & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : 1;
+      }));
+      this._sortedHeaders.notifyOnChanges();
+    });
+    this._keyManager = new FocusKeyManager(this._sortedHeaders).withWrap().withHomeAndEnd().withVerticalOrientation(this._orientation === "vertical");
+    (this._dir ? this._dir.change : of()).pipe(startWith(this._layoutDirection()), takeUntil(this._destroyed)).subscribe((direction) => this._keyManager.withHorizontalOrientation(direction));
     this._keyManager.updateActiveItem(this._selectedIndex);
     this.steps.changes.subscribe(() => {
       if (!this.selected) {
@@ -552,10 +419,7 @@ var _CdkStepper = class _CdkStepper {
   }
   /** Selects and focuses the next step in list. */
   next() {
-    this.selectedIndex = Math.min(
-      this._selectedIndex + 1,
-      this.steps.length - 1,
-    );
+    this.selectedIndex = Math.min(this._selectedIndex + 1, this.steps.length - 1);
   }
   /** Selects and focuses the previous step in list. */
   previous() {
@@ -593,9 +457,7 @@ var _CdkStepper = class _CdkStepper {
   _getIndicatorType(index, state = STEP_STATE.NUMBER) {
     const step = this.steps.toArray()[index];
     const isCurrentStep = this._isCurrentStep(index);
-    return step._displayDefaultIndicatorType
-      ? this._getDefaultIndicatorLogic(step, isCurrentStep)
-      : this._getGuidelineLogic(step, isCurrentStep, state);
+    return step._displayDefaultIndicatorType ? this._getDefaultIndicatorLogic(step, isCurrentStep) : this._getGuidelineLogic(step, isCurrentStep, state);
   }
   _getDefaultIndicatorLogic(step, isCurrentStep) {
     if (step._showError() && step.hasError && !isCurrentStep) {
@@ -624,9 +486,7 @@ var _CdkStepper = class _CdkStepper {
   }
   /** Returns the index of the currently-focused step header. */
   _getFocusIndex() {
-    return this._keyManager
-      ? this._keyManager.activeItemIndex
-      : this._selectedIndex;
+    return this._keyManager ? this._keyManager.activeItemIndex : this._selectedIndex;
   }
   _updateSelectedItemIndex(newIndex) {
     const stepsArray = this.steps.toArray();
@@ -634,11 +494,9 @@ var _CdkStepper = class _CdkStepper {
       selectedIndex: newIndex,
       previouslySelectedIndex: this._selectedIndex,
       selectedStep: stepsArray[newIndex],
-      previouslySelectedStep: stepsArray[this._selectedIndex],
+      previouslySelectedStep: stepsArray[this._selectedIndex]
     });
-    this._containsFocus()
-      ? this._keyManager.setActiveItem(newIndex)
-      : this._keyManager.updateActiveItem(newIndex);
+    this._containsFocus() ? this._keyManager.setActiveItem(newIndex) : this._keyManager.updateActiveItem(newIndex);
     this._selectedIndex = newIndex;
     this.selectedIndexChange.emit(this._selectedIndex);
     this._stateChanged();
@@ -647,11 +505,7 @@ var _CdkStepper = class _CdkStepper {
     const hasModifier = hasModifierKey(event);
     const keyCode = event.keyCode;
     const manager = this._keyManager;
-    if (
-      manager.activeItemIndex != null &&
-      !hasModifier &&
-      (keyCode === SPACE || keyCode === ENTER)
-    ) {
+    if (manager.activeItemIndex != null && !hasModifier && (keyCode === SPACE || keyCode === ENTER)) {
       this.selectedIndex = manager.activeItemIndex;
       event.preventDefault();
     } else {
@@ -660,16 +514,11 @@ var _CdkStepper = class _CdkStepper {
   }
   _anyControlsInvalidOrPending(index) {
     if (this.linear && index >= 0) {
-      return this.steps
-        .toArray()
-        .slice(0, index)
-        .some((step) => {
-          const control = step.stepControl;
-          const isIncomplete = control
-            ? control.invalid || control.pending || !step.interacted
-            : !step.completed;
-          return isIncomplete && !step.optional && !step._completedOverride;
-        });
+      return this.steps.toArray().slice(0, index).some((step) => {
+        const control = step.stepControl;
+        const isIncomplete = control ? control.invalid || control.pending || !step.interacted : !step.completed;
+        return isIncomplete && !step.optional && !step._completedOverride;
+      });
     }
     return false;
   }
@@ -680,10 +529,7 @@ var _CdkStepper = class _CdkStepper {
   _containsFocus() {
     const stepperElement = this._elementRef.nativeElement;
     const focusedElement = _getFocusedElementPierceShadowDom();
-    return (
-      stepperElement === focusedElement ||
-      stepperElement.contains(focusedElement)
-    );
+    return stepperElement === focusedElement || stepperElement.contains(focusedElement);
   }
   /** Checks whether the passed-in index is a valid step index. */
   _isValidIndex(index) {
@@ -691,11 +537,7 @@ var _CdkStepper = class _CdkStepper {
   }
 };
 _CdkStepper.ɵfac = function CdkStepper_Factory(t) {
-  return new (t || _CdkStepper)(
-    ɵɵdirectiveInject(Directionality, 8),
-    ɵɵdirectiveInject(ChangeDetectorRef),
-    ɵɵdirectiveInject(ElementRef),
-  );
+  return new (t || _CdkStepper)(ɵɵdirectiveInject(Directionality, 8), ɵɵdirectiveInject(ChangeDetectorRef), ɵɵdirectiveInject(ElementRef));
 };
 _CdkStepper.ɵdir = ɵɵdefineDirective({
   type: _CdkStepper,
@@ -707,132 +549,80 @@ _CdkStepper.ɵdir = ɵɵdefineDirective({
     }
     if (rf & 2) {
       let _t;
-      ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx._steps = _t);
-      ɵɵqueryRefresh((_t = ɵɵloadQuery())) && (ctx._stepHeader = _t);
+      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._steps = _t);
+      ɵɵqueryRefresh(_t = ɵɵloadQuery()) && (ctx._stepHeader = _t);
     }
   },
   inputs: {
-    linear: [
-      InputFlags.HasDecoratorInputTransform,
-      "linear",
-      "linear",
-      booleanAttribute,
-    ],
-    selectedIndex: [
-      InputFlags.HasDecoratorInputTransform,
-      "selectedIndex",
-      "selectedIndex",
-      numberAttribute,
-    ],
+    linear: [InputFlags.HasDecoratorInputTransform, "linear", "linear", booleanAttribute],
+    selectedIndex: [InputFlags.HasDecoratorInputTransform, "selectedIndex", "selectedIndex", numberAttribute],
     selected: "selected",
-    orientation: "orientation",
+    orientation: "orientation"
   },
   outputs: {
     selectionChange: "selectionChange",
-    selectedIndexChange: "selectedIndexChange",
+    selectedIndexChange: "selectedIndexChange"
   },
   exportAs: ["cdkStepper"],
   standalone: true,
-  features: [ɵɵInputTransformsFeature],
+  features: [ɵɵInputTransformsFeature]
 });
 var CdkStepper = _CdkStepper;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStepper,
-      [
-        {
-          type: Directive,
-          args: [
-            {
-              selector: "[cdkStepper]",
-              exportAs: "cdkStepper",
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: Directionality,
-          decorators: [
-            {
-              type: Optional,
-            },
-          ],
-        },
-        {
-          type: ChangeDetectorRef,
-        },
-        {
-          type: ElementRef,
-        },
-      ],
-      {
-        _steps: [
-          {
-            type: ContentChildren,
-            args: [
-              CdkStep,
-              {
-                descendants: true,
-              },
-            ],
-          },
-        ],
-        _stepHeader: [
-          {
-            type: ContentChildren,
-            args: [
-              CdkStepHeader,
-              {
-                descendants: true,
-              },
-            ],
-          },
-        ],
-        linear: [
-          {
-            type: Input,
-            args: [
-              {
-                transform: booleanAttribute,
-              },
-            ],
-          },
-        ],
-        selectedIndex: [
-          {
-            type: Input,
-            args: [
-              {
-                transform: numberAttribute,
-              },
-            ],
-          },
-        ],
-        selected: [
-          {
-            type: Input,
-          },
-        ],
-        selectionChange: [
-          {
-            type: Output,
-          },
-        ],
-        selectedIndexChange: [
-          {
-            type: Output,
-          },
-        ],
-        orientation: [
-          {
-            type: Input,
-          },
-        ],
-      },
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepper, [{
+    type: Directive,
+    args: [{
+      selector: "[cdkStepper]",
+      exportAs: "cdkStepper",
+      standalone: true
+    }]
+  }], () => [{
+    type: Directionality,
+    decorators: [{
+      type: Optional
+    }]
+  }, {
+    type: ChangeDetectorRef
+  }, {
+    type: ElementRef
+  }], {
+    _steps: [{
+      type: ContentChildren,
+      args: [CdkStep, {
+        descendants: true
+      }]
+    }],
+    _stepHeader: [{
+      type: ContentChildren,
+      args: [CdkStepHeader, {
+        descendants: true
+      }]
+    }],
+    linear: [{
+      type: Input,
+      args: [{
+        transform: booleanAttribute
+      }]
+    }],
+    selectedIndex: [{
+      type: Input,
+      args: [{
+        transform: numberAttribute
+      }]
+    }],
+    selected: [{
+      type: Input
+    }],
+    selectionChange: [{
+      type: Output
+    }],
+    selectedIndexChange: [{
+      type: Output
+    }],
+    orientation: [{
+      type: Input
+    }]
+  });
 })();
 var _CdkStepperNext = class _CdkStepperNext {
   constructor(_stepper) {
@@ -858,43 +648,29 @@ _CdkStepperNext.ɵdir = ɵɵdefineDirective({
     }
   },
   inputs: {
-    type: "type",
+    type: "type"
   },
-  standalone: true,
+  standalone: true
 });
 var CdkStepperNext = _CdkStepperNext;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStepperNext,
-      [
-        {
-          type: Directive,
-          args: [
-            {
-              selector: "button[cdkStepperNext]",
-              host: {
-                "[type]": "type",
-                "(click)": "_stepper.next()",
-              },
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: CdkStepper,
-        },
-      ],
-      {
-        type: [
-          {
-            type: Input,
-          },
-        ],
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepperNext, [{
+    type: Directive,
+    args: [{
+      selector: "button[cdkStepperNext]",
+      host: {
+        "[type]": "type",
+        "(click)": "_stepper.next()"
       },
-    );
+      standalone: true
+    }]
+  }], () => [{
+    type: CdkStepper
+  }], {
+    type: [{
+      type: Input
+    }]
+  });
 })();
 var _CdkStepperPrevious = class _CdkStepperPrevious {
   constructor(_stepper) {
@@ -911,117 +687,61 @@ _CdkStepperPrevious.ɵdir = ɵɵdefineDirective({
   hostVars: 1,
   hostBindings: function CdkStepperPrevious_HostBindings(rf, ctx) {
     if (rf & 1) {
-      ɵɵlistener(
-        "click",
-        function CdkStepperPrevious_click_HostBindingHandler() {
-          return ctx._stepper.previous();
-        },
-      );
+      ɵɵlistener("click", function CdkStepperPrevious_click_HostBindingHandler() {
+        return ctx._stepper.previous();
+      });
     }
     if (rf & 2) {
       ɵɵhostProperty("type", ctx.type);
     }
   },
   inputs: {
-    type: "type",
+    type: "type"
   },
-  standalone: true,
+  standalone: true
 });
 var CdkStepperPrevious = _CdkStepperPrevious;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStepperPrevious,
-      [
-        {
-          type: Directive,
-          args: [
-            {
-              selector: "button[cdkStepperPrevious]",
-              host: {
-                "[type]": "type",
-                "(click)": "_stepper.previous()",
-              },
-              standalone: true,
-            },
-          ],
-        },
-      ],
-      () => [
-        {
-          type: CdkStepper,
-        },
-      ],
-      {
-        type: [
-          {
-            type: Input,
-          },
-        ],
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepperPrevious, [{
+    type: Directive,
+    args: [{
+      selector: "button[cdkStepperPrevious]",
+      host: {
+        "[type]": "type",
+        "(click)": "_stepper.previous()"
       },
-    );
+      standalone: true
+    }]
+  }], () => [{
+    type: CdkStepper
+  }], {
+    type: [{
+      type: Input
+    }]
+  });
 })();
-var _CdkStepperModule = class _CdkStepperModule {};
+var _CdkStepperModule = class _CdkStepperModule {
+};
 _CdkStepperModule.ɵfac = function CdkStepperModule_Factory(t) {
   return new (t || _CdkStepperModule)();
 };
 _CdkStepperModule.ɵmod = ɵɵdefineNgModule({
   type: _CdkStepperModule,
-  imports: [
-    BidiModule,
-    CdkStep,
-    CdkStepper,
-    CdkStepHeader,
-    CdkStepLabel,
-    CdkStepperNext,
-    CdkStepperPrevious,
-  ],
-  exports: [
-    CdkStep,
-    CdkStepper,
-    CdkStepHeader,
-    CdkStepLabel,
-    CdkStepperNext,
-    CdkStepperPrevious,
-  ],
+  imports: [BidiModule, CdkStep, CdkStepper, CdkStepHeader, CdkStepLabel, CdkStepperNext, CdkStepperPrevious],
+  exports: [CdkStep, CdkStepper, CdkStepHeader, CdkStepLabel, CdkStepperNext, CdkStepperPrevious]
 });
 _CdkStepperModule.ɵinj = ɵɵdefineInjector({
-  imports: [BidiModule],
+  imports: [BidiModule]
 });
 var CdkStepperModule = _CdkStepperModule;
 (() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) &&
-    setClassMetadata(
-      CdkStepperModule,
-      [
-        {
-          type: NgModule,
-          args: [
-            {
-              imports: [
-                BidiModule,
-                CdkStep,
-                CdkStepper,
-                CdkStepHeader,
-                CdkStepLabel,
-                CdkStepperNext,
-                CdkStepperPrevious,
-              ],
-              exports: [
-                CdkStep,
-                CdkStepper,
-                CdkStepHeader,
-                CdkStepLabel,
-                CdkStepperNext,
-                CdkStepperPrevious,
-              ],
-            },
-          ],
-        },
-      ],
-      null,
-      null,
-    );
+  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(CdkStepperModule, [{
+    type: NgModule,
+    args: [{
+      imports: [BidiModule, CdkStep, CdkStepper, CdkStepHeader, CdkStepLabel, CdkStepperNext, CdkStepperPrevious],
+      exports: [CdkStep, CdkStepper, CdkStepHeader, CdkStepLabel, CdkStepperNext, CdkStepperPrevious]
+    }]
+  }], null, null);
 })();
 
 export {
@@ -1034,6 +754,6 @@ export {
   CdkStepper,
   CdkStepperNext,
   CdkStepperPrevious,
-  CdkStepperModule,
+  CdkStepperModule
 };
 //# sourceMappingURL=chunk-6BPGLAV5.js.map
