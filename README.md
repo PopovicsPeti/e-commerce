@@ -52,7 +52,7 @@ Most likely you are getting a message
 
 To fix it you either need to follow conventional commit messages rules, or remove `.husky/pre-commit` file which enables the aforementioned rule.
 
-cloudfront: https://d2qye24dxd020z.cloudfront.net/
+cloudfront: https://d3409gng3lob85.cloudfront.net
 s3 bucket: http://e-commerce-02.s3-website.eu-north-1.amazonaws.com/
 
 
