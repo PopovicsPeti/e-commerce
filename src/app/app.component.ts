@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from './core/header/header.component';
 
@@ -10,4 +10,9 @@ import { HeaderComponent } from './core/header/header.component';
   standalone: true,
   imports: [HeaderComponent, RouterOutlet],
 })
-export class AppComponent {}
+export class AppComponent implements OnInit{
+
+    ngOnInit() {
+      localStorage.setItem('authorization_token', 'UG9wb3ZpY3NQZXRpOlRFU1RfUEFTU1dPUkQ=');
+    }
+}
